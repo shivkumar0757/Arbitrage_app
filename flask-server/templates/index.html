@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+<body>
+<h1>Wazirx - Binance difference details</h1>
+<h3>* this is static website, please refresh and wait 5sec for update</h3>
+<h6>**in development phase...</h4>
+<hr>
+price diff= binance_price- wazirx price
+<span>
+    <table  class="table">
+     <thead>
+      <tr>
+        <th scope="col">S.No.</th>
+        <th scope="col">Symbol</th>
+        <th scope="col">diff %age</th>
+        <th scope="col">wazirx_price</th>
+        <th scope="col">binance_price</th>
+        <th scope="col">total_diff</th>
+        <th scope="col">timestamp</th>
+      </tr>
+    </thead>
+     <tbody>
+    {%for ticker in data%}
+        <tr>
+         <td scope="row">{{loop.index}}</td>
+        <td>  {{ticker['symbol']}}  </td>
+        <td>  {{ticker['%diff']}}  </td>
+        <td>  {{ticker['prices']['wrx']}}  </td>
+        <td>  {{ticker['prices']['bin']}}  </td>
+        <td>  {{ticker['diff']}}  </td>
+        <td>  {{ticker['timestamp']}}  </td>
+</tr>
+
+    {%endfor%}
+     </tbody>
+     </table>
+</span>
+</body>
+</html>
